@@ -1,16 +1,118 @@
-{% extends "index.html" %}
 
+{% extends "index.html" %}
+{% load static %}
 {% block content %}
 
 <div class="row white--color pt-6">
-    <h1>Art Drive</h1>
-    <div class="col-6">
-        asd
+
+    <h1 class="d-flex mx-auto">What We Do</h1>
+
+    <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    
+        <div class="carousel-inner">
+           
+
+ 
+
+
+         
+            <div class="carousel-item active">
+                <div class="cards-wrapper">
+               
+                    {% for project in projects|slice:3 %}
+                    <div class="card">
+    
+                        <img src="{% static 'image/kreoncirclelogo.webp' %}" class="card-img-top card__img" alt="">
+    
+                        <div class="card-body">
+                            <h5>{{project.title}}</h5>
+    
+                            <p class="card-text">
+                            {{project.bodycontent| truncatechars:200|safe}}
+                            </p>
+                            <a href="{% url "project" project.title %}" class="btn btn-primary">{{project.title}}</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                 
+                 
+                </div>
+            </div>
+            
+            
+
+            <div class="carousel-item ">
+                <div class="cards-wrapper">
+    
+                    <div class="card">
+    
+                        <img src="{% static 'image/kreoncirclelogo.webp' %}" class="card-img-top card__img" alt="">
+    
+                        <div class="card-body">
+                            <h5>Artdrive</h5>
+    
+                            <p class="card-text">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in accusamus architecto suscipit dolorum vero, tempora sapiente eligendi aspernatur nihil.
+                            </p>
+                            <a href="" class="btn btn-primary">View More</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+    
+                        <img src="{% static 'image/kreoncirclelogo.webp' %}" class="card-img-top card__img" alt="">
+    
+                        <div class="card-body">
+                            <h5>Artdrive</h5>
+    
+                            <p class="card-text">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in accusamus architecto suscipit dolorum vero, tempora sapiente eligendi aspernatur nihil.
+                            </p>
+                            <a href="" class="btn btn-primary">View More</a>
+                        </div>
+                    </div>
+                    <div class="card">
+    
+                        <img src="{% static 'image/kreoncirclelogo.webp' %}" class="card-img-top card__img" alt="">
+    
+                        <div class="card-body">
+                            <h5>Artdrive</h5>
+    
+                            <p class="card-text">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in accusamus architecto suscipit dolorum vero, tempora sapiente eligendi aspernatur nihil.
+                            </p>
+                            <a href="" class="btn btn-primary">View More</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+       
+           
+          
+        
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+       
     </div>
-    <div class="col-1">
-        asd
-    </div>
- </div>
+
+   
+</div>
+
+
+<div class="row w--color pt-6">
+</div>
+
+
+
 
 
 
